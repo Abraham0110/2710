@@ -1,915 +1,794 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Something Special ✨</title>
+<title>For Abigail ✦</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:Arial, sans-serif;
-    background:#050510;
-    color:white;
-}
-
-
-/* =========================
-   BACKGROUND
-========================= */
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    background:
-        radial-gradient(circle at 20% 20%, #44206b 0%, transparent 30%),
-        radial-gradient(circle at 80% 80%, #182d68 0%, transparent 30%),
-        #050510;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#fff4f8;
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 15%,rgba(132,74,160,.32),transparent 36%),
+    radial-gradient(ellipse at 85% 78%,rgba(205,82,139,.22),transparent 34%),
+    linear-gradient(145deg,#090814,#171026 52%,#0c0a18);
 }
 
-
-/* =========================
-   STARS
-========================= */
-
-.stars{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:radial-gradient(#fff 1px,transparent 1.5px);
+  background-size:43px 43px;
+  opacity:.26;
 }
+
+.stars,.decorations{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.stars{z-index:0}
 
 .star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    border-radius:50%;
-    animation:twinkle 2s infinite alternate;
+  position:absolute;
+  width:2px;
+  height:2px;
+  border-radius:50%;
+  background:white;
+  animation:twinkle 2.4s infinite alternate;
 }
 
 @keyframes twinkle{
-
-    from{
-        opacity:.2;
-        transform:scale(.5);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1.5);
-    }
-
+  from{opacity:.15;transform:scale(.7)}
+  to{opacity:.95;transform:scale(1.6)}
 }
 
+.decorations{z-index:1}
 
-/* =========================
-   SCREENS
-========================= */
+.flower{
+  position:absolute;
+  font-size:30px;
+  opacity:.55;
+  animation:drift 7s ease-in-out infinite;
+}
+
+.flower:nth-child(1){top:12%;left:7%}
+.flower:nth-child(2){top:22%;right:9%}
+.flower:nth-child(3){bottom:15%;left:11%}
+.flower:nth-child(4){bottom:13%;right:8%}
+
+@keyframes drift{
+  0%,100%{transform:translateY(0) rotate(-8deg)}
+  50%{transform:translateY(-12px) rotate(8deg)}
+}
 
 .screen{
-
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
-
+  position:relative;
+  z-index:2;
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px 18px;
+  transition:opacity .5s,transform .5s;
 }
 
+.hidden{display:none!important}
 
-.hidden{
-
-    opacity:0;
-    pointer-events:none;
-    transform:scale(1.1);
-
+.intro,.birthday,.final{
+  text-align:center;
+  width:min(100%,850px);
 }
 
-
-/* =========================
-   LOADING
-========================= */
-
-#loading{
-
-    flex-direction:column;
-
+.eyebrow{
+  color:#e7c9e2;
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
 }
 
-.loader{
-
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-
-    border:3px solid rgba(255,255,255,.1);
-
-    border-top:3px solid #ff6fa5;
-
-    animation:spin 1s linear infinite;
-
-    margin-bottom:30px;
-
+.pill{
+  display:inline-block;
+  padding:10px 16px;
+  border:1px solid #ffffff30;
+  border-radius:99px;
+  background:#ffffff0b;
+  color:#f4d8e8;
+  font-size:11px;
+  letter-spacing:.12em;
+  margin-bottom:26px;
 }
 
-@keyframes spin{
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-.loadingText{
-
-    color:#aaa;
-    letter-spacing:3px;
-    font-size:12px;
-
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-
-    text-align:center;
-    max-width:700px;
-    padding:30px;
-
-}
-
-.small{
-
-    letter-spacing:7px;
-    font-size:12px;
-    color:#aaa;
-    margin-bottom:30px;
-
+h1,h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:500;
 }
 
 .intro h1{
-
-    font-size:clamp(45px,10vw,100px);
-
-    font-weight:900;
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ff7ca8,
-            #fff
-        );
-
-    background-size:200%;
-
-    -webkit-background-clip:text;
-    color:transparent;
-
-    animation:shine 4s linear infinite;
-
+  margin-top:24px;
+  font-size:clamp(48px,10vw,100px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  background:linear-gradient(110deg,#fff8fc,#ff9fc7,#c9b2ff,#fff8fc);
+  background-size:220%;
+  color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
+  animation:shine 6s linear infinite;
 }
 
 @keyframes shine{
-
-    to{
-        background-position:200%;
-    }
-
+  to{background-position:220% center}
 }
 
 .intro p{
-
-    margin-top:25px;
-
-    color:#aaa;
-
-    font-size:17px;
-
+  margin:24px auto 0;
+  color:#d8cbd9;
+  line-height:1.8;
 }
 
-
-.enter{
-
-    margin-top:45px;
-
-    padding:15px 45px;
-
-    border:1px solid rgba(255,255,255,.3);
-
-    background:rgba(255,255,255,.05);
-
-    color:white;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    letter-spacing:3px;
-
-    transition:.4s;
-
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:28px;
+  padding:14px 27px;
+  border-radius:99px;
+  cursor:pointer;
+  color:#241322;
+  border:1px solid #ffffff80;
+  background:linear-gradient(110deg,#ffe0ed,#ff9fc7,#d9c6ff);
+  box-shadow:0 8px 35px #ff6fa833;
+  font-weight:bold;
+  letter-spacing:.06em;
+  transition:.25s;
 }
 
-.enter:hover{
-
-    background:white;
-
-    color:#111;
-
-    transform:scale(1.08);
-
+.button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px #ff6fa855;
 }
 
-
-/* =========================
-   BIRTHDAY
-========================= */
-
-.birthday{
-
-    text-align:center;
-
-    position:relative;
-
-    z-index:5;
-
+.mini{
+  font-size:44px;
+  margin-bottom:15px;
+  animation:bob 2.5s ease-in-out infinite;
 }
 
-.birthday .label{
-
-    font-size:13px;
-
-    letter-spacing:8px;
-
-    color:#aaa;
-
+@keyframes bob{
+  50%{transform:translateY(-9px) rotate(3deg)}
 }
 
 .birthday h1{
+  margin:18px 0 22px;
+  font-size:clamp(49px,10.5vw,116px);
+  line-height:.92;
+}
 
-    font-size:clamp(50px,12vw,140px);
-
-    line-height:.9;
-
-    margin:20px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #ff75a7,
-            #a66cff
-        );
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
+.gradient-text{
+  background:linear-gradient(130deg,#fff,#ff9fc7,#c9b2ff);
+  color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
 }
 
 .name{
-
-    font-size:clamp(25px,5vw,55px);
-
-    color:white;
-
+  font-size:clamp(21px,4vw,37px);
+  color:#fff1f8;
 }
 
 .date{
-
-    margin-top:15px;
-
-    color:#aaa;
-
-    letter-spacing:5px;
-
+  margin-top:13px;
+  color:#d7bfd8;
+  font-size:11px;
+  letter-spacing:.2em;
 }
-
-
-/* =========================
-   CAKE
-========================= */
 
 .cake{
-
-    font-size:90px;
-
-    margin-top:30px;
-
-    animation:
-
-        cakeFloat 2s ease-in-out infinite;
-
+  font-size:70px;
+  margin-top:24px;
+  animation:bob 2.4s infinite;
 }
 
-@keyframes cakeFloat{
+/* AMPLOP */
 
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-15px);
-    }
-
+.envelope-wrap{
+  width:min(100%,660px);
+  text-align:center;
 }
 
+.envelope-hint{
+  color:#e8cfe0;
+  font-size:12px;
+  letter-spacing:.1em;
+  margin:20px 0;
+}
 
-/* =========================
-   LETTER
-========================= */
+.envelope{
+  position:relative;
+  display:block;
+  width:min(82vw,330px);
+  height:215px;
+  margin:25px auto 0;
+  border:1px solid #ffc2dc70;
+  border-radius:14px;
+  cursor:pointer;
+  background:linear-gradient(145deg,#ffbad5,#d9bdfb);
+  box-shadow:0 22px 60px #0005,0 0 36px #ff8fbd30;
+  perspective:800px;
+  transition:transform .3s;
+}
+
+.envelope:hover{transform:translateY(-4px)}
+
+.envelope:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(35deg,#ffffff40,transparent 50%);
+}
+
+.envelope-flap{
+  position:absolute;
+  inset:0 0 auto;
+  height:58%;
+  z-index:3;
+  background:linear-gradient(135deg,#ffe4f0,#f49ac1);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top center;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.envelope-heart{
+  position:absolute;
+  z-index:4;
+  top:48%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:36px;
+  transition:opacity .25s;
+}
+
+.envelope-letter{
+  position:absolute;
+  left:8%;
+  right:8%;
+  bottom:9%;
+  height:72%;
+  z-index:2;
+  border-radius:8px;
+  background:#fff6fb;
+  color:#a14d79;
+  display:grid;
+  place-items:center;
+  font-family:Georgia,serif;
+  font-size:21px;
+  box-shadow:0 3px 15px #501e461f;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.envelope.opened .envelope-flap{
+  transform:rotateX(180deg);
+  z-index:1;
+}
+
+.envelope.opened .envelope-letter{
+  transform:translateY(-72px);
+}
+
+.envelope.opened .envelope-heart{opacity:0}
+
+/* SURAT PESAN */
 
 .letter{
+  width:min(100%,660px);
+  padding:clamp(24px,5vw,44px);
+  border:1px solid #ffc2dc40;
+  border-radius:26px;
+  background:linear-gradient(145deg,#fff6fc1f,#ffffff0b);
+  box-shadow:0 25px 90px #0005,inset 0 1px #ffffff20;
+  backdrop-filter:blur(18px);
+  max-height:calc(100vh - 38px);
+  overflow-y:auto;
+  animation:paperAppear .8s ease both;
+}
 
-    width:min(90%,600px);
+@keyframes paperAppear{
+  from{opacity:0;transform:translateY(35px) scale(.94)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
 
-    padding:45px;
-
-    border-radius:25px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.03)
-        );
-
-    border:
-
-        1px solid
-        rgba(255,255,255,.15);
-
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-
-        0 30px 100px
-        rgba(0,0,0,.5);
-
+.letter-top{
+  color:#ffb8d4;
+  font-size:12px;
+  letter-spacing:.18em;
+  margin-bottom:15px;
 }
 
 .letter h2{
-
-    font-size:35px;
-
-    margin-bottom:25px;
-
+  font-size:clamp(29px,5vw,42px);
+  margin-bottom:22px;
+  color:#fff3f8;
 }
 
 .letter p{
-
-    color:#ccc;
-
-    line-height:1.9;
-
-    margin-bottom:15px;
-
+  color:#eee0eb;
+  line-height:1.85;
+  margin-bottom:15px;
+  font-size:15px;
 }
 
-.next{
-
-    margin-top:20px;
-
-    padding:12px 30px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#ff5f91;
-
-    color:white;
-
-    cursor:pointer;
-
+.letter .signature{
+  color:#ffc2dc;
+  font-size:13px;
 }
 
+/* PENUTUP */
 
-/* =========================
-   FINAL
-========================= */
-
-.final{
-
-    text-align:center;
-
+.final .sparkle{
+  font-size:58px;
+  margin-bottom:22px;
 }
 
 .final h1{
-
-    font-size:clamp(40px,9vw,90px);
-
+  font-size:clamp(36px,8vw,82px);
+  line-height:1.08;
 }
 
 .final p{
-
-    margin-top:20px;
-
-    color:#aaa;
-
-    font-size:18px;
-
+  margin-top:18px;
+  color:#d8cbd9;
+  line-height:1.8;
 }
 
-.final .big{
-
-    font-size:70px;
-
-    margin-top:30px;
-
+.final .small-note{
+  font-size:12px;
+  letter-spacing:.12em;
+  color:#d5b6d5;
 }
 
-
-/* =========================
-   PARTICLES
-========================= */
+.skip{
+  position:fixed;
+  z-index:5;
+  right:16px;
+  bottom:15px;
+  border:0;
+  background:transparent;
+  color:#bcaec4;
+  font-size:11px;
+  cursor:pointer;
+  padding:8px;
+}
 
 .particle{
-
-    position:fixed;
-
-    top:-30px;
-
-    pointer-events:none;
-
-    animation:fall linear forwards;
-
-    z-index:20;
-
+  position:fixed;
+  top:-35px;
+  z-index:10;
+  pointer-events:none;
+  animation:fall linear forwards;
 }
 
 @keyframes fall{
-
-    to{
-
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:0;
-
-    }
-
+  to{
+    transform:translateY(110vh) rotate(500deg);
+    opacity:0;
+  }
 }
 
-
-/* =========================
-   SKIP
-========================= */
-
-.skip{
-
-    position:fixed;
-
-    bottom:20px;
-    right:20px;
-
-    color:#666;
-
-    font-size:11px;
-
-    cursor:pointer;
-
+.petal{
+  position:fixed;
+  top:-30px;
+  z-index:3;
+  pointer-events:none;
+  animation:petalFall linear forwards;
 }
 
+@keyframes petalFall{
+  to{
+    transform:translate3d(var(--drift),110vh,0) rotate(650deg);
+    opacity:.05;
+  }
+}
+
+.balloon{
+  position:fixed;
+  bottom:-130px;
+  z-index:2;
+  pointer-events:none;
+  font-size:48px;
+  animation:balloonRise linear forwards;
+}
+
+@keyframes balloonRise{
+  to{
+    transform:translateY(-125vh) translateX(var(--sway));
+    opacity:.1;
+  }
+}
+
+.typewriter-cursor{
+  display:inline-block;
+  width:2px;
+  height:1em;
+  margin-left:3px;
+  background:#ff9fc7;
+  animation:blink .7s steps(2) infinite;
+}
+
+@keyframes blink{50%{opacity:0}}
+
+@media(max-width:480px){
+  .screen{padding:25px 15px}
+  .intro p,.letter p{font-size:14px}
+  .flower{opacity:.35}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- STARS -->
-
 <div class="stars" id="stars"></div>
 
-
-<!-- ======================
-     LOADING
-====================== -->
-
-<section id="loading" class="screen">
-
-    <div class="loader"></div>
-
-    <div class="loadingText">
-
-        PREPARING SOMETHING SPECIAL...
-
-    </div>
-
-</section>
-
-
-<!-- ======================
-     INTRO
-====================== -->
-
-<section id="intro" class="screen hidden">
-
-    <div class="intro">
-
-        <div class="small">
-
-            27 • 10 • 2026
-
-        </div>
-
-        <h1>
-
-            HEY, YOU.
-
-        </h1>
-
-        <p>
-
-            I made a little something<br>
-            just for today.
-
-        </p>
-
-        <button
-            class="enter"
-            onclick="showBirthday()">
-
-            ENTER ✦
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ======================
-     BIRTHDAY
-====================== -->
-
-<section id="birthday" class="screen hidden">
-
-    <div class="birthday">
-
-        <div class="label">
-
-            TODAY IS YOUR DAY
-
-        </div>
-
-        <h1>
-
-            HAPPY<br>
-            BIRTHDAY
-
-        </h1>
-
-        <div class="name">
-
-            Abigail Cenyta Bella
-
-        </div>
-
-        <div class="date">
-
-            27 OCTOBER 2026
-
-        </div>
-
-        <div class="cake">
-
-            🎂
-
-        </div>
-
-        <button
-            class="next"
-            onclick="showLetter()">
-
-            Ada sesuatu lagi → 
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ======================
-     LETTER
-====================== -->
-
-<section id="letterScreen" class="screen hidden">
-
-    <div class="letter">
-
-        <h2>
-
-            💌 A Little Message
-
-        </h2>
-
-        <p>
-
-            Selamat ulang tahun ya Bella!
-
-        </p>
-
-        <p>
-
-            Nggak kerasa aja udah 17 tahun Nich.
-            Semoga di umur yang sekarang ini lu selalu sehat,
-            selalu menjadi anak yang baik, tidak tidur mulu
-            dan kurangin makannya  di saat jam pelajaran.
-
-        </p>
-
-        <p>
-
-            Semoga hari ini akan menjadi salah satu hari yang
-            menyenangkan buat lu. Jangan lupa enjoy your
-            day yaa :v
-
-        </p>
-
-        <p>
-
-            Dan satu lagi semoga semua hal yang
-            kamu perjuangkan bisa perlahan
-            menjadi kenyataan dan semoga apa yang
-            kamu cita-citakan, termasuk bisa masuk
-            Hukum Unpad, bisa tercapai.
-            <br><br>
-            -- from Abraham (Computer Science - Software
-            Engineering)
-
-        </p>
-
-        <button
-            class="next"
-            onclick="showFinal()">
-
-            One last thing →
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ======================
-     FINAL
-====================== -->
-
-<section id="final" class="screen hidden">
-
-    <div class="final">
-
-        <div class="big">
-
-            ✨
-
-        </div>
-
-        <h1>
-
-            HAVE A<br>
-            WONDERFUL DAY.
-
-        </h1>
-
-        <p>
-
-            Happy Birthday, Abigail Cenyta Bella. 🎂
-
-        </p>
-
-        <p>
-
-            Keep smiling. 🌙
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<div
-    class="skip"
-    onclick="showBirthday()">
-
-    skip intro
-
+<div class="decorations">
+  <span class="flower">🌸</span>
+  <span class="flower">✿</span>
+  <span class="flower">🎀</span>
+  <span class="flower">🌷</span>
 </div>
 
+<!-- LOADING -->
+<section id="loading" class="screen">
+  <div class="intro">
+    <div class="mini">✦</div>
+    <p class="eyebrow">A little something is on its way</p>
+    <h1 style="font-size:clamp(28px,6vw,50px);margin-top:20px">
+      Preparing your surprise...
+    </h1>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="intro" class="screen hidden">
+  <div class="intro">
+    <div class="pill">✦ 27 · 10 · 2026 ✦</div>
+    <p class="eyebrow">Made with a little extra care</p>
+    <h1>HEY,<br>YOU.</h1>
+    <p>I made a little something<br>just for today. 🌷</p>
+    <button class="button" onclick="showBirthday()">
+      OPEN YOUR SURPRISE ✦
+    </button>
+  </div>
+</section>
+
+<!-- BIRTHDAY -->
+<section id="birthday" class="screen hidden">
+  <div class="birthday">
+    <div class="mini">🎀</div>
+    <div class="eyebrow">Today is your day</div>
+    <h1 class="gradient-text">HAPPY<br>BIRTHDAY</h1>
+    <div class="name">Abigail Centya Bella</div>
+    <div class="date">27 OCTOBER 2026 · SWEET SEVENTEEN</div>
+    <div class="cake">🎂</div>
+    <button class="button" onclick="showLetter()">
+      Ada sesuatu lagi →
+    </button>
+  </div>
+</section>
+
+<!-- AMPLOP -->
+<section id="letterScreen" class="screen hidden">
+
+  <div class="envelope-wrap" id="envelopeWrap">
+    <p class="eyebrow">A little surprise inside</p>
+
+    <button class="envelope" id="envelope"
+      aria-label="Buka amplop surat" onclick="openEnvelope()">
+
+      <span class="envelope-letter">For Bella ♡</span>
+      <span class="envelope-flap"></span>
+      <span class="envelope-heart">💗</span>
+
+    </button>
+
+    <p class="envelope-hint" id="envelopeHint">
+      KLIK AMPLOPNYA BUAT BUKA SURAT ✦
+    </p>
+  </div>
+
+  <!-- PESAN MUNCUL SETELAH AMPLOP DIBUKA -->
+  <article class="letter hidden" id="letterCard">
+
+    <div class="letter-top">♡ A LITTLE NOTE FOR YOU ♡</div>
+    <h2>💌 A Little Message</h2>
+
+    <p>Selamat ulang tahun ya Bella!</p>
+
+    <p>
+      Nggak kerasa aja udah 17 tahun Nich.
+      Semoga di umur yang sekarang ini lu selalu sehat,
+      selalu menjadi anak yang baik, tidak tidur mulu
+      dan kurangin makannya di saat jam pelajaran.
+    </p>
+
+    <p>
+      Semoga hari ini akan menjadi salah satu hari yang
+      menyenangkan buat lu. Jangan lupa enjoy your day yaa :v
+    </p>
+
+    <p>
+      Dan satu lagi semoga semua hal yang kamu perjuangkan
+      bisa perlahan menjadi kenyataan dan semoga apa yang
+      kamu cita-citakan, termasuk bisa masuk Hukum Unpad,
+      bisa tercapai.
+    </p>
+
+    <p class="signature">
+      — from Abraham<br>
+      Computer Science - Software Engineering
+    </p>
+
+    <button class="button" onclick="showFinal()">
+      One last thing →
+    </button>
+
+  </article>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="screen hidden">
+  <div class="final">
+    <div class="sparkle">✨🌷✨</div>
+    <p class="eyebrow">A new chapter begins</p>
+
+    <h1 class="gradient-text" id="finalHeading">
+      HAVE A<br>WONDERFUL DAY.
+    </h1>
+
+    <p>Happy Birthday, Abigail Centya Bella. 🎂</p>
+    <p>Keep smiling. 🌙</p>
+    <p class="small-note">MADE JUST FOR YOU · 27.10.2026</p>
+
+    <button class="button" onclick="replay()">
+      Replay the surprise ↺
+    </button>
+  </div>
+</section>
+
+<button class="skip" id="skip" onclick="skipIntro()">
+  skip intro ↗
+</button>
 
 <script>
+/* BINTANG */
+const starLayer = document.getElementById("stars");
 
-
-/* =========================
-   STARS GENERATOR
-========================= */
-
-const stars =
-document.getElementById("stars");
-
-
-for(let i=0;i<150;i++){
-
-    const star =
-    document.createElement("div");
-
-    star.className="star";
-
-    star.style.left =
-    Math.random()*100+"%";
-
-    star.style.top =
-    Math.random()*100+"%";
-
-    star.style.animationDelay =
-    Math.random()*3+"s";
-
-    stars.appendChild(star);
-
+for(let i=0;i<125;i++){
+  const star=document.createElement("span");
+  star.className="star";
+  star.style.left=Math.random()*100+"%";
+  star.style.top=Math.random()*100+"%";
+  star.style.animationDelay=Math.random()*3+"s";
+  star.style.opacity=(.2+Math.random()*.7).toString();
+  starLayer.appendChild(star);
 }
 
+/* PERGANTIAN HALAMAN */
+let currentScreen="loading";
+const skipButton=document.getElementById("skip");
 
-/* =========================
-   LOADING
-========================= */
+function showScreen(nextId){
+  const current=document.getElementById(currentScreen);
+  const next=document.getElementById(nextId);
 
+  if(currentScreen===nextId)return;
+
+  current.classList.add("leaving");
+
+  setTimeout(()=>{
+    current.classList.add("hidden");
+    current.classList.remove("leaving");
+
+    next.classList.remove("hidden","leaving");
+    currentScreen=nextId;
+
+    skipButton.style.display=
+      nextId==="intro"?"block":"none";
+
+    window.scrollTo({top:0,behavior:"smooth"});
+  },300);
+}
+
+/* LOADING */
 setTimeout(()=>{
+  if(currentScreen==="loading"){
+    showScreen("intro");
+  }
+},1700);
 
-    document
-    .getElementById("loading")
-    .classList.add("hidden");
-
-    document
-    .getElementById("intro")
-    .classList.remove("hidden");
-
-},2500);
-
-
-/* =========================
-   SCREEN SYSTEM
-========================= */
-
-function changeScreen(
-    current,
-    next
-){
-
-    document
-    .getElementById(current)
-    .classList.add("hidden");
-
-    setTimeout(()=>{
-
-        document
-        .getElementById(next)
-        .classList.remove("hidden");
-
-    },500);
-
-}
-
-
-/* =========================
-   BIRTHDAY
-========================= */
-
+/* ULANG TAHUN */
 function showBirthday(){
-
-    changeScreen(
-        "intro",
-        "birthday"
-    );
-
-    particles();
-
+  showScreen("birthday");
+  particles(["🌸","🎀","✨","💗","🎉","⭐"]);
 }
-
-
-/* =========================
-   LETTER
-========================= */
 
 function showLetter(){
-
-    changeScreen(
-        "birthday",
-        "letterScreen"
-    );
-
+  showScreen("letterScreen");
 }
 
+function skipIntro(){
+  showBirthday();
+}
 
-/* =========================
-   FINAL
-========================= */
+/* BUKA AMPLOP */
+function openEnvelope(){
+  const envelope=document.getElementById("envelope");
+  const hint=document.getElementById("envelopeHint");
+  const card=document.getElementById("letterCard");
+  const wrap=document.getElementById("envelopeWrap");
 
+  if(envelope.classList.contains("opened"))return;
+
+  envelope.classList.add("opened");
+  hint.textContent="SURAT KHUSUS BUAT BELLA 💌";
+
+  setTimeout(()=>{
+    wrap.classList.add("hidden");
+    card.classList.remove("hidden");
+
+    card.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+    petals();
+  },850);
+}
+
+/* HALAMAN TERAKHIR */
 function showFinal(){
-
-    changeScreen(
-        "letterScreen",
-        "final"
-    );
-
-    particles();
-
+  showScreen("final");
+  particles(["✨","🎉","💖","🌷","💕","⭐","🎀"]);
+  petals();
+  balloons();
+  typeFinalMessage();
 }
 
+/* EFEK MENGETIK */
+function typeFinalMessage(){
+  const heading=document.getElementById("finalHeading");
 
-/* =========================
-   PARTICLES
-========================= */
+  if(heading.dataset.typed==="yes")return;
 
-function particles(){
+  heading.dataset.typed="yes";
+  heading.innerHTML=
+    '<span class="typewriter"></span><span class="typewriter-cursor"></span>';
 
-    const emojis = [
+  const target=heading.querySelector(".typewriter");
+  const text="HAVE A\nWONDERFUL DAY.";
+  let index=0;
 
-        "✨",
-        "🎉",
-        "💖",
-        "🎊",
-        "⭐",
-        "💕",
-        "🌸"
+  function typeNext(){
+    if(index>=text.length)return;
 
-    ];
-
-
-    for(
-        let i=0;
-        i<60;
-        i++
-    ){
-
-        const particle =
-        document.createElement("div");
-
-        particle.className =
-        "particle";
-
-        particle.innerText =
-        emojis[
-            Math.floor(
-                Math.random()
-                * emojis.length
-            )
-        ];
-
-
-        particle.style.left =
-        Math.random()*100+"vw";
-
-
-        particle.style.fontSize =
-        (12+Math.random()*25)+"px";
-
-
-        particle.style.animationDuration =
-        (2+Math.random()*4)+"s";
-
-
-        document.body
-        .appendChild(particle);
-
-
-        setTimeout(()=>{
-
-            particle.remove();
-
-        },6000);
-
+    if(text[index]==="\n"){
+      target.appendChild(document.createElement("br"));
+    }else{
+      target.appendChild(
+        document.createTextNode(text[index])
+      );
     }
 
+    index++;
+    setTimeout(typeNext,72);
+  }
+
+  typeNext();
 }
 
+/* KELopak BUNGA JATUH */
+function petals(){
+  const emojis=["🌸","🌷","✿","💮"];
+
+  for(let i=0;i<24;i++){
+    const item=document.createElement("span");
+    item.className="petal";
+    item.textContent=emojis[
+      Math.floor(Math.random()*emojis.length)
+    ];
+
+    item.style.left=Math.random()*100+"vw";
+    item.style.fontSize=(12+Math.random()*16)+"px";
+    item.style.setProperty(
+      "--drift",
+      (Math.random()*180-90)+"px"
+    );
+    item.style.animationDuration=(5+Math.random()*5)+"s";
+    item.style.animationDelay=Math.random()*2+"s";
+
+    document.body.appendChild(item);
+    setTimeout(()=>item.remove(),12500);
+  }
+}
+
+/* BALON TERBANG */
+function balloons(){
+  for(let i=0;i<7;i++){
+    const balloon=document.createElement("span");
+    balloon.className="balloon";
+
+    balloon.textContent=
+      ["🎈","🎈","🎀"][Math.floor(Math.random()*3)];
+
+    balloon.style.left=(5+Math.random()*90)+"vw";
+    balloon.style.setProperty(
+      "--sway",
+      (Math.random()*120-60)+"px"
+    );
+    balloon.style.animationDuration=(7+Math.random()*5)+"s";
+    balloon.style.animationDelay=Math.random()*1.5+"s";
+
+    document.body.appendChild(balloon);
+    setTimeout(()=>balloon.remove(),14000);
+  }
+}
+
+/* CONFETTI */
+function particles(emojis){
+  for(let i=0;i<34;i++){
+    const item=document.createElement("span");
+    item.className="particle";
+
+    item.textContent=emojis[
+      Math.floor(Math.random()*emojis.length)
+    ];
+
+    item.style.left=Math.random()*100+"vw";
+    item.style.fontSize=(14+Math.random()*19)+"px";
+    item.style.animationDuration=(3+Math.random()*3)+"s";
+    item.style.animationDelay=Math.random()*1.2+"s";
+
+    document.body.appendChild(item);
+    setTimeout(()=>item.remove(),7500);
+  }
+}
+
+/* ULANGI DARI AWAL */
+function replay(){
+  document.getElementById("envelope").classList.remove("opened");
+  document.getElementById("envelopeWrap").classList.remove("hidden");
+  document.getElementById("letterCard").classList.add("hidden");
+  document.getElementById("envelopeHint").textContent=
+    "KLIK AMPLOPNYA BUAT BUKA SURAT ✦";
+
+  const heading=document.getElementById("finalHeading");
+  heading.dataset.typed="";
+  heading.innerHTML="HAVE A<br>WONDERFUL DAY.";
+
+  showScreen("intro");
+  skipButton.style.display="block";
+}
 </script>
 
 </body>
 </html>
+

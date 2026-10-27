@@ -419,12 +419,7 @@ h1,h2{
 }
 
 .typewriter-cursor{
-  display:inline-block;
-  width:2px;
-  height:1em;
-  margin-left:3px;
-  background:#ff9fc7;
-  animation:blink .7s steps(2) infinite;
+  display: none;
 }
 
 @keyframes blink{50%{opacity:0}}
@@ -504,9 +499,9 @@ h1,h2{
     <button class="envelope" id="envelope"
       aria-label="Buka amplop surat" onclick="openEnvelope()">
 
-      <span class="envelope-letter">For Bella ♡</span>
+      <span class="envelope-letter">For Bella</span>
       <span class="envelope-flap"></span>
-      <span class="envelope-heart">💗</span>
+      <span class="envelope-heart"></span>
 
     </button>
 
@@ -528,6 +523,7 @@ h1,h2{
       Semoga di umur yang sekarang ini lu selalu sehat,
       selalu menjadi anak yang baik, tidak tidur mulu
       dan kurangin makannya di saat jam pelajaran.
+      Satu lagi tetap jadi Bella yang baik, seru, dan apa adanya, yaps!
     </p>
 
     <p>
@@ -543,7 +539,7 @@ h1,h2{
     </p>
 
     <p class="signature">
-      — from Abraham<br>
+      — from your friend Abraham<br>
       Computer Science - Software Engineering
     </p>
 
@@ -557,7 +553,7 @@ h1,h2{
 <!-- FINAL -->
 <section id="final" class="screen hidden">
   <div class="final">
-    <div class="sparkle">✨🌷✨</div>
+    <div class="sparkle"></div>
     <p class="eyebrow">A new chapter begins</p>
 
     <h1 class="gradient-text" id="finalHeading">
